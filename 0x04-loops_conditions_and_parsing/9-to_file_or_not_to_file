@@ -4,15 +4,18 @@
 FILE="holbertonschool"
 
 if [ -e "$FILE" ]
-then 
-echo "holbertonschool file exists"
-
-else echo "holbertonschool file not empty"
-fi
-if [ -f "$FILE" ]
-then 
-echo "holbertonschool is regular file"
-fi 
-else 
-echo "holbetonschool file does not exist"
+then
+    echo "holbertonschool file exists"
+    if [ ! -s "$FILE" ]
+    then
+        echo "holbertonschool file is empty"
+    else
+        echo "holbertonschool file is not empty"
+    fi
+    if [ -f "$FILE" ]
+    then
+        echo "holbertonschool is a regular file"
+    fi
+else
+    echo "holbertonschool file does not exist"
 fi
